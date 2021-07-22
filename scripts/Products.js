@@ -1,6 +1,24 @@
 import { getProducts } from "./database.js"
 
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+        if (itemClicked.id.startsWith("product")) {
+            const [, productId] = itemClicked.id.split("--")
+
+            for (const product of products) {
+                if (product.id === parseInt()) {
+                    window.alert(` ${productId} costs ${product.price} `)
+                }
+            }
+        }
+    }
+)
+
 const products = getProducts()
+
+
 
 export const Products = () => {
     let html = "<ul>"
