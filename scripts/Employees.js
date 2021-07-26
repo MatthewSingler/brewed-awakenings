@@ -1,7 +1,7 @@
 import { getEmployees } from "./database.js"
 import { getOrders } from "./database.js"
 import { getProducts } from "./database.js"
-//import { Products } from "./Products.js"//why did i do this?
+
 
 const products = getProducts() //never read, why//
 const employees = getEmployees()
@@ -29,14 +29,14 @@ document.addEventListener(
 
             for (const employee of employees) {
                 if (employee.id === parseInt(employeeId)) {
-                    const employeeOrders = orders.filter(     //never read, why//
+                    const employeeOrders = orders.filter(
                         (order) => {
                             if (order.employeeId === parseInt(employeeId)) {
                                 return true
                             }
                         }
                         )
-                        window.alert(`${employee.name} has sold ${employeeOrders.length}`)
+                        window.alert(`${employee.name} has sold ${employeeOrders.length} product.`)
                     }
 
             }
