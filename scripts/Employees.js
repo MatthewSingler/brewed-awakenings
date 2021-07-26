@@ -1,8 +1,9 @@
 import { getEmployees } from "./database.js"
 import { getOrders } from "./database.js"
 import { getProducts } from "./database.js"
+//import { Products } from "./Products.js"//why did i do this?
 
-const products = getProducts()
+const products = getProducts() //never read, why//
 const employees = getEmployees()
 const orders = getOrders()
 export const Employees = () => {
@@ -17,6 +18,8 @@ export const Employees = () => {
     return html
 }
 
+//I need to have orders talk to employees//
+
 document.addEventListener(
     "click",
     (clickEvent) => {
@@ -26,16 +29,16 @@ document.addEventListener(
 
             for (const employee of employees) {
                 if (employee.id === parseInt(employeeId)) {
-                    const employeeOrders = orders.filter(
+                    const employeeOrders = orders.filter(     //never read, why//
                         (order) => {
-                            if (order.employeeId === employeeId) {
+                            if (order.employeeId === parseInt(employeeId)) {
                                 return true
                             }
                         }
-                    )
-                    window.alert (`${employee.name} has sold ${employeeOrders} products `)
-                }
-                
+                        )
+                        window.alert(`${employee.name} has sold ${employeeOrders.length}`)
+                    }
+
             }
         }
     }
